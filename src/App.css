@@ -60,3 +60,31 @@ nav{
   justify-content: space-evenly;
   list-style-type: none;
 }
+.rocketimage{
+  width: inherit;
+}
+.rocketimagewrapper{
+  width: 350px;
+}
+.rocketcard{
+  margin: 4px;
+  display: flex;
+
+}
+.rightcard{
+  padding: 5px 15px;
+}
+.rocketdescription{
+  font-size: 25px;
+}
+.rockettitle{
+  margin: 0;
+}
+.reservebutton{
+  background-color: #3998FF;
+  color:white;
+  padding:15px;
+  font-size: 20px;
+  border: none;
+  border-radius: 5px;
+}
