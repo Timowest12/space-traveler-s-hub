@@ -18,16 +18,16 @@ function App() {
     <Router>
       <header>
         <nav>
-          <div>
+          <div className="navleft">
             <NavLink to="/">
-              <img src={LOGO} alt="logo" />
+              <img className="logo" src={LOGO} alt="logo" />
             </NavLink>
             <NavLink to="/">
               <h1>Space Travelers Hub</h1>
             </NavLink>
           </div>
 
-          <ul>
+          <ul className="navright">
             <li>
               
               <NavLink to="/Missions">Missions</NavLink>
