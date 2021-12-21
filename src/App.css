@@ -75,7 +75,7 @@ nav{
   padding: 5px 15px;
 }
 .rocketdescription{
-  font-size: 25px;
+  font-size: 20px;
 }
 .rockettitle{
   margin: 0;
@@ -95,4 +95,11 @@ nav{
   font-size: 20px;
   border: 1px solid #8E949A;
   border-radius: 5px;
+}
+.reservedbadge{
+  background-color: #4FB6C7;
+  color: white;
+  border-radius: 8px;
+  margin: 0 5px;
+  padding: 0 5px;
 }
