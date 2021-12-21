@@ -10,3 +10,6 @@ export const fetchRockets = () => {
         })
     }
 }
+export const reserveRocket = (id) => {
+
+}
