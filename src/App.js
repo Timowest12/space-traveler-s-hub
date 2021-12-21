@@ -12,7 +12,7 @@ import LOGO from './assets/planet.png';
 import Rockets from './pages/Rockets';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { fetchRockets } from './actions';
+import { fetchRockets } from './rockets-redux/actions';
 
 
 

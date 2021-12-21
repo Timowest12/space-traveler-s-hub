@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { reserveRocket } from '../actions'
+import { reserveRocket } from '../../rockets-redux/actions'
 
 const RocketCard = (data) => {
     const [isReserved,setIsreserved] = useState(data.data.reserved)

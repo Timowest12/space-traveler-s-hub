@@ -1,6 +1,6 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
-import RocketCard from '../components/RocketCard'
+import RocketCard from '../components/rockets/RocketCard'
 
 const Rockets = () => {
     const rockets = useSelector(state => state)
