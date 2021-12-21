@@ -9,6 +9,7 @@ import {
 } from 'react-router-dom';
 import Missions from './components/missions/missions';
 import LOGO from './assets/planet.png';
+import Rockets from './pages/Rockets';
 
 
 
@@ -31,7 +32,11 @@ function App() {
               
               <NavLink to="/Missions">Missions</NavLink>
             </li>
-            |
+            <li>
+              
+              <NavLink to="/Rockets">Rockets</NavLink>
+            </li>
+            
             <li>
               <NavLink to="/My Profile">My Profile</NavLink>
             </li>
@@ -42,6 +47,7 @@ function App() {
       <Switch>
         <Route path="/My Profile"><MyProfile /></Route>
         <Route path="/Missions"><Missions /></Route>
+        <Route path="/Rockets"><Rockets /></Route>
       </Switch>
     </Router>
   );
