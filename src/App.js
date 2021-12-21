@@ -9,30 +9,39 @@ import {
 } from 'react-router-dom';
 import Missions from './components/missions/missions';
 import LOGO from './assets/planet.png';
+import Rockets from './pages/Rockets';
+
 
 
 
 function App() {
+  const colorchange = () => {
+
+  }
   return (
     <Router>
       <header>
         <nav>
-          <div>
+          <div className="navleft">
             <NavLink to="/">
-              <img src={LOGO} alt="logo" />
+              <img className="logo" src={LOGO} alt="logo" />
             </NavLink>
             <NavLink to="/">
               <h1>Space Travelers Hub</h1>
             </NavLink>
           </div>
 
-          <ul>
-            <li>
+          <ul className="navright">
+            <li className="navlink" onClick={colorchange}>
               
               <NavLink to="/Missions">Missions</NavLink>
             </li>
-            |
-            <li>
+            <li className="navlink" onClick={colorchange}>
+              
+              <NavLink to="/Rockets">Rockets</NavLink>
+            </li>
+            
+            <li className="navlink" onClick={colorchange}>
               <NavLink to="/My Profile">My Profile</NavLink>
             </li>
           </ul>
@@ -42,6 +51,7 @@ function App() {
       <Switch>
         <Route path="/My Profile"><MyProfile /></Route>
         <Route path="/Missions"><Missions /></Route>
+        <Route path="/Rockets"><Rockets /></Route>
       </Switch>
     </Router>
   );
