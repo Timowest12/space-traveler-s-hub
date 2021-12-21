@@ -88,3 +88,11 @@ nav{
   border: none;
   border-radius: 5px;
 }
+.cancelReservation{
+  background-color: white;
+  color:#8E949A;
+  padding:15px;
+  font-size: 20px;
+  border: 1px solid #8E949A;
+  border-radius: 5px;
+}
