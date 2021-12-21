@@ -13,7 +13,11 @@ import Rockets from './pages/Rockets';
 
 
 
+
 function App() {
+  const colorchange = () => {
+
+  }
   return (
     <Router>
       <header>
@@ -28,16 +32,16 @@ function App() {
           </div>
 
           <ul className="navright">
-            <li>
+            <li className="navlink" onClick={colorchange}>
               
               <NavLink to="/Missions">Missions</NavLink>
             </li>
-            <li>
+            <li className="navlink" onClick={colorchange}>
               
               <NavLink to="/Rockets">Rockets</NavLink>
             </li>
             
-            <li>
+            <li className="navlink" onClick={colorchange}>
               <NavLink to="/My Profile">My Profile</NavLink>
             </li>
           </ul>
