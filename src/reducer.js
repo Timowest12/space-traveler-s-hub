@@ -5,8 +5,9 @@ const rocketsReducer = (state = initState, action) => {
   }
   if (action.type === 'RESERVE_ROCKET') {
     state.map((elem) => {
-      if (elem.id === action.payload) {
-        elem.reserved = true;// eslint-disable-line no-param-reassign
+      const reserves = elem;
+      if (reserves.id === action.payload) {
+        reserves.reserved = true;
       }
       return elem;
     });
@@ -14,8 +15,9 @@ const rocketsReducer = (state = initState, action) => {
   }
   if (action.type === 'CANCEL_RESERVATION') {
     state.forEach((element) => {
-      if (element.id === action.payload) {
-        element.reserved = false;// eslint-disable-line no-param-reassign
+      const checker = element;
+      if (checker.id === action.payload) {
+        checker.reserved = false;
       }
     });
     return state;
