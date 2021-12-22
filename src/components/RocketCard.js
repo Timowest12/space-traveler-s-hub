@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { reserveRocket } from '../actions'
 import { v4 as uuidv4 } from 'uuid';
 
 const RocketCard = (data) => {
@@ -8,7 +7,6 @@ const RocketCard = (data) => {
     const reserved = useSelector(state => state)
 
     const dispatch = useDispatch()
-    //alert(data.data.rocket_name)
     const reserveRocket = () => {
         dispatch({
             type: 'RESERVE_ROCKET',

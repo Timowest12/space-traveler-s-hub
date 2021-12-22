@@ -5,7 +5,6 @@ import { v4 as uuidv4 } from 'uuid';
 const MyProfile = () => {
   const rockets = useSelector(state => state.rockets)
   const missions = useSelector(state => state.missions)
-  console.log(missions.missions.length)
   return (
     <div className="profilePage">
     <div className="myMissions">
