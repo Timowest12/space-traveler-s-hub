@@ -13,10 +13,11 @@ const Missions = () => {
   const leaveHandler = (id) => {
     dispatch(allowLeaveMission(id));
   };
-  useEffect(() => dispatch(getMissionsData()), []);
+  useEffect(() => dispatch(getMissionsData()), [dispatch]);
 
   return (
-    <table>
+
+    <table className="table-container">
       <thead>
         <tr>
           <th>Mission</th>
@@ -34,22 +35,23 @@ const Missions = () => {
             reserved,
           } = mission;
 
-          return (
-            <tr key={id}>
+
+    return (
+        <tr key={id} style={(reserved) ? { backgroundColor: '#fff' } : { backgroundColor: 'rgb(238, 233, 233)' }}>
               <td className="missionName">{name}</td>
               <td className="description">{description}</td>
               <td>
                 {reserved
             && (
-            <button type="submit" className="activeMember"> Active Member</button>)}
+            <button type="submit" className="memberBtn activeMember"> Active Member</button>)}
                 {!reserved
-            && (<button type="submit" className="notMember"> NOT A MEMBER</button>)}
+            && (<button type="submit" className="memberBtn notMember"> NOT A MEMBER</button>)}
               </td>
               <td>
                 {!reserved
-              && (<button type="submit" className="joinMission" onClick={() => joinHandler(id)}>Join Mission</button>)}
+              && (<button type="submit" className="memberBtn joinMission" onClick={() => joinHandler(id)}>Join Mission</button>)}
                 { reserved
-               && (<button type="submit" className="leaveMission" onClick={() => leaveHandler(id)}>Leave Mission</button>
+               && (<button type="submit" className="memberBtn leaveMission" onClick={() => leaveHandler(id)}>Leave Mission</button>
                )}
               </td>
 
