@@ -3,7 +3,6 @@
 This project uses the official spaceX API to pull in a list of active rockets and missions!
 ![1128972](https://user-images.githubusercontent.com/13661892/147085665-93613de4-fb9b-4c4f-ac14-8ad8d50d6373.png)
 
-# Space traveler's hub
 
 This project was created using React(JavaScript) and Redux,
 other technologies used: Axios, Thunk, CSS, Git
