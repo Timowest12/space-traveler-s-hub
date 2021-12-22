@@ -20,7 +20,7 @@ type `git clone` https://github.com/Timowest12/space-traveler-s-hub.git
 
 type `cd space travelers hub` to change directory to the folder of the project
 
-in your terminal type `npm install` to install all dependencies
+in your terminal type `npm install` or `npm i` to install all dependencies
 
 run `npm start` in your terminal
 
