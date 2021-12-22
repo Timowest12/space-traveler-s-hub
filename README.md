@@ -23,6 +23,8 @@ type `cd bookstore` to change directory to the folder of the project
 in your terminal type `npm install` to install all dependencies
 
 run `npm start` in your terminal
+![](https://github.com/Timowest12/space-traveler-s-hub/blob/dev/src/assets/giphy.gif?raw=true)
+
 
 ## Authors
 
