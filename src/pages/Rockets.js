@@ -1,14 +1,14 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 import RocketCard from '../components/RocketCard'
+import { v4 as uuidv4 } from 'uuid';
 
 const Rockets = () => {
     const rockets = useSelector(state => state.rockets)
-    //alert(rockets[0])
     return (
         <div>
             {rockets.map((item) => 
-            <RocketCard data={item} />
+            <RocketCard key={uuidv4()} data={item} />
             )}
             
         </div>
