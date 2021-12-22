@@ -64,6 +64,7 @@ const [curActive,setCurActive] = useState('rockets')
         <Route path="/My Profile"><MyProfile /></Route>
         <Route path="/Missions"><Missions /></Route>
         <Route path="/Rockets"><Rockets /></Route>
+        <Route path="/"><Rockets /></Route>
       </Switch>
     </Router>
   );
