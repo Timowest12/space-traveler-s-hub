@@ -36,8 +36,10 @@ th {
   padding: 10px 100px;
 }
 
-table, th, td {
-  border:1px solid #111;
+table,
+th,
+td {
+  border: 1px solid #111;
 }
 
 tr:nth-child(even) {
@@ -58,7 +60,7 @@ tr:nth-child(even) {
 }
 
 .joinMission {
-  border: 1px solid  #bdc3c7 ;
+  border: 1px solid  #bdc3c7;
   color: #313030;
 }
 
@@ -75,9 +77,10 @@ tr:nth-child(even) {
 .memberBtn {
   padding: 10px;
   margin-left: 10px;
-  
-table,
-th,
-td {
-  border: 1px solid black;
+
+  table,
+  th,
+  td {
+    border: 1px solid black;
+  }
 }
