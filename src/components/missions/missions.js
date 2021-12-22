@@ -1,6 +1,10 @@
 import { React, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { getMissionsData, allowJoinMission, allowLeaveMission } from '../../pages/missions';
+import {
+  getMissionsData,
+  allowJoinMission,
+  allowLeaveMission,
+} from '../../pages/missions';
 
 const Missions = () => {
   const dispatch = useDispatch();
@@ -16,7 +20,6 @@ const Missions = () => {
   useEffect(() => dispatch(getMissionsData()), [dispatch]);
 
   return (
-
     <table className="table-container">
       <thead>
         <tr>
@@ -29,32 +32,54 @@ const Missions = () => {
       <tbody>
         {missions.map((mission) => {
           const {
-            id,
-            name,
-            description,
-            reserved,
+            id, name, description, reserved,
           } = mission;
 
-
-    return (
-        <tr key={id} style={(reserved) ? { backgroundColor: '#fff' } : { backgroundColor: 'rgb(238, 233, 233)' }}>
+          return (
+            <tr
+              key={id}
+              style={
+                reserved
+                  ? { backgroundColor: '#fff' }
+                  : { backgroundColor: 'rgb(238, 233, 233)' }
+              }
+            >
               <td className="missionName">{name}</td>
               <td className="description">{description}</td>
               <td>
-                {reserved
-            && (
-            <button type="submit" className="memberBtn activeMember"> Active Member</button>)}
-                {!reserved
-            && (<button type="submit" className="memberBtn notMember"> NOT A MEMBER</button>)}
+                {reserved && (
+                  <button type="submit" className="memberBtn activeMember">
+                    {' '}
+                    Active Member
+                  </button>
+                )}
+                {!reserved && (
+                  <button type="submit" className="memberBtn notMember">
+                    {' '}
+                    NOT A MEMBER
+                  </button>
+                )}
               </td>
               <td>
-                {!reserved
-              && (<button type="submit" className="memberBtn joinMission" onClick={() => joinHandler(id)}>Join Mission</button>)}
-                { reserved
-               && (<button type="submit" className="memberBtn leaveMission" onClick={() => leaveHandler(id)}>Leave Mission</button>
-               )}
+                {!reserved && (
+                  <button
+                    type="submit"
+                    className="memberBtn joinMission"
+                    onClick={() => joinHandler(id)}
+                  >
+                    Join Mission
+                  </button>
+                )}
+                {reserved && (
+                  <button
+                    type="submit"
+                    className="memberBtn leaveMission"
+                    onClick={() => leaveHandler(id)}
+                  >
+                    Leave Mission
+                  </button>
+                )}
               </td>
-
             </tr>
           );
         })}
