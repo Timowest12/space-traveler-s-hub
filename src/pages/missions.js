@@ -50,7 +50,7 @@ export const getMissionsData = () => (dispatch) => {
     .catch((err) => dispatch(manageFailure(err.message)));
 };
 
-const missionsReducer = (state = { missions: [] }, action) => {
+const missionsReducer = ( state = { missions: [] }, action) => {
   switch (action.type) {
     case MISSION_START:
       return {
