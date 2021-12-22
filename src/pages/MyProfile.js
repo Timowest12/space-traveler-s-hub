@@ -1,6 +1,9 @@
 import React from 'react'
+import { useSelector } from 'react-redux'
 
 const MyProfile = () => {
+  const rockets = useSelector(state => state)
+  console.log(rockets.length)
   return (
     <div className="profilePage">
     <div className="myMissions">
@@ -33,15 +36,14 @@ const MyProfile = () => {
 </h2>
 <table>
   <thead>
-     <tr>
-      <th>Falcon 9</th>
+    {rockets.map((item) => 
+      <tr>
+      {item.reserved ? 
+      <th>{item.rocket_name}</th>
+       : null}
     </tr>
-     <tr>
-      <th>Falcon Heavy</th>
-    </tr>
-     <tr>
-      <th>Starship</th>
-    </tr>
+    )}
+     
   </thead>
   <tbody>
   </tbody>
