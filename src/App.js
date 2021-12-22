@@ -13,7 +13,7 @@ import LOGO from './assets/planet.png';
 import Rockets from './pages/Rockets';
 import fetchRockets from './actions';
 
-function App() {
+const App = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -59,6 +59,6 @@ function App() {
       </Switch>
     </Router>
   );
-}
+};
 
 export default App;
