@@ -37,11 +37,10 @@ run `npm start` in your terminal
 
 👤 **grace-kabaghe**
 
-GitHub: @githubhandle
-LinkedIn: [LinkedIn](https://linkedin.com/in/grace-kabaghe
+- GitHub: [@githubhandle](https://github.com/gracekabaghe)
+- LinkedIn: [LinkedIn](https://linkedin.com/in/grace-kabaghe)
 
-https://camo.githubusercontent.com/121323c2743dbaf9a8269c4e0e6150a44f3ba1fc068a9915b4281a1ef0a9b399/68747470733a2f2f6769746875622d726561646d652d73746174732e76657263656c2e6170702f6170693f757365726e616d653d67726163656b616261676865267468656d653d7261646963616c
-
+![Grace's GitHub stats](https://github-readme-stats.vercel.app/api?username=gracekabaghe&count_private=true&theme=dark&show_icons=true)
 
 
 ## Acknowledgments
