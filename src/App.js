@@ -1,27 +1,23 @@
-
 import './App.css';
-import MyProfile from './pages/MyProfile';
 import {
   BrowserRouter as Router,
   Route,
   Switch,
   NavLink,
 } from 'react-router-dom';
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import MyProfile from './pages/MyProfile';
 import Missions from './components/missions/missions';
 import LOGO from './assets/planet.png';
 import Rockets from './pages/Rockets';
-import { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
 import { fetchRockets } from './actions';
 
-
-
-
 function App() {
-const dispatch = useDispatch()
-useEffect(() => {
-  dispatch(fetchRockets())
-}, [])
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(fetchRockets());
+  }, []);
 
   return (
     <Router>
@@ -38,14 +34,14 @@ useEffect(() => {
 
           <ul className="navright">
             <li className="navlink">
-              
+
               <NavLink to="/Missions">Missions</NavLink>
             </li>
             <li className="navlink">
-              
+
               <NavLink to="/Rockets">Rockets</NavLink>
             </li>
-            
+
             <li className="navlink">
               <NavLink to="/My Profile">My Profile</NavLink>
             </li>

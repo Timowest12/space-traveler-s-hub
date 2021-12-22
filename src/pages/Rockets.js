@@ -1,18 +1,16 @@
-import React from 'react'
-import { useSelector } from 'react-redux'
-import RocketCard from '../components/RocketCard'
+import React from 'react';
+import { useSelector } from 'react-redux';
+import RocketCard from '../components/RocketCard';
 
 const Rockets = () => {
-    const rockets = useSelector(state => state.rockets)
-    //alert(rockets[0])
-    return (
-        <div>
-            {rockets.map((item) => 
-            <RocketCard data={item} />
-            )}
-            
-        </div>
-    )
-}
+  const rockets = useSelector((state) => state.rockets);
+  // alert(rockets[0])
+  return (
+    <div>
+      {rockets.map((item) => <RocketCard data={item} />)}
 
-export default Rockets
+    </div>
+  );
+};
+
+export default Rockets;

@@ -1,17 +1,14 @@
-import React from 'react'
+import React from 'react';
 
+const Header = () => (
+  <nav>
+    <ul>
+      <li className="logo"><img src="../assets/planet.png" alt="" /></li>
+      <li className="profile" />
+      <li className="missions" />
+      <li className="rockets" />
+    </ul>
+  </nav>
+);
 
-const Header = () => {
-    return (
-        <nav>
-            <ul>
-                <li className='logo'><img src="../assets/planet.png" alt="" /></li>
-                <li className='profile'></li>
-                <li className='missions'></li>
-                <li className='rockets'></li>
-            </ul>
-        </nav>
-    )
-}
-
-export default Header
+export default Header;
