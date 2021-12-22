@@ -1,24 +1,19 @@
-import { React } from 'react';
+import { React, useEffect} from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { getMissionsData, allowJoinMission, allowLeaveMission } from '../../pages/missions';
 
 const Missions = () => {
-  const missions = [{
-    id: 1,
-    mission_name: 'Galactic tour',
-    description: 'Head for the starts',
-    reserved: false,
-  },
-  {
-    id: 2, 
-    mission_name: 'Mission Jupiter', 
-    description: 'Sun expedition', 
-    reserved: true,
-  },
-  {
-    id: 3, 
-    mission_name: 'Mars tour', 
-    description: 'Mars weather', 
-    reserved: true,
-  }];
+const dispatch = useDispatch();
+  const missions = useSelector((state) => state.missions.missions);
+
+const joinHandler = (id) => {
+    dispatch(allowJoinMission(id));
+  };
+
+  const leaveHandler = (id) => {
+    dispatch(allowLeaveMission(id));
+  };
+  useEffect(() => dispatch(getMissionsData()), []);
 
   return (
     <table >
@@ -34,7 +29,7 @@ const Missions = () => {
           {missions.map((mission) => {
           const {
             id, 
-            mission_name, 
+            name, 
             description, 
             reserved,
           } = mission;
@@ -42,7 +37,7 @@ const Missions = () => {
 
     return (
         <tr key={id}>
-              <td className="missionName">{mission_name}</td>
+              <td className="missionName">{name}</td>
               <td className="description">{description}</td>
               <td>
                 {reserved
@@ -53,9 +48,9 @@ const Missions = () => {
               </td>
               <td>
                 {!reserved
-              && (<button type="submit" className="joinMission">Join Mission</button>)}
+              && (<button type="submit" className="joinMission" onClick={() => joinHandler(id)}>Join Mission</button>)}
                 { reserved
-               && (<button type="submit" className="leaveMission">Leave Mission</button>
+               && (<button type="submit" className="leaveMission" onClick={() => leaveHandler(id)}>Leave Mission</button>
                )}
               </td>
 
