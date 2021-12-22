@@ -1,5 +1,6 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
+import { v4 as uuidv4 } from 'uuid';
 
 const MyProfile = () => {
   const rockets = useSelector(state => state.rockets)
@@ -10,14 +11,14 @@ const MyProfile = () => {
     <div className="myMissions">
         <h2>My Missions</h2>
       <table>
- 
+    <thead>
   {missions.missions.map(item => 
      
      
-item.reserved ? <tr><th>{item.name}</th></tr>:null
+item.reserved ? <tr key={uuidv4()}><th>{item.name}</th></tr>:null
    
     )}
-    
+    </thead>
   
  
 </table>
@@ -32,7 +33,7 @@ item.reserved ? <tr><th>{item.name}</th></tr>:null
     {rockets.map(item => 
       
       item.reserved ? 
-        <tr><th>{item.rocket_name}</th></tr>
+        <tr key={uuidv4()}><th>{item.rocket_name}</th></tr>
        : null
     )}
      
