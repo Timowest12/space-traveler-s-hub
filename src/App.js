@@ -10,14 +10,19 @@ import {
 import Missions from './components/missions/missions';
 import LOGO from './assets/planet.png';
 import Rockets from './pages/Rockets';
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { fetchRockets } from './actions';
 
 
 
 
 function App() {
-  const colorchange = () => {
+const dispatch = useDispatch()
+useEffect(() => {
+  dispatch(fetchRockets())
+}, [])
 
-  }
   return (
     <Router>
       <header>
@@ -32,16 +37,16 @@ function App() {
           </div>
 
           <ul className="navright">
-            <li className="navlink" onClick={colorchange}>
+            <li className="navlink">
               
               <NavLink to="/Missions">Missions</NavLink>
             </li>
-            <li className="navlink" onClick={colorchange}>
+            <li className="navlink">
               
               <NavLink to="/Rockets">Rockets</NavLink>
             </li>
             
-            <li className="navlink" onClick={colorchange}>
+            <li className="navlink">
               <NavLink to="/My Profile">My Profile</NavLink>
             </li>
           </ul>

@@ -5,11 +5,23 @@ import App from './App';
 import { Provider } from 'react-redux';
 import store from './pages/configureStore';
 import reportWebVitals from './reportWebVitals';
+import { Provider } from 'react-redux';
+import { applyMiddleware, createStore } from 'redux';
+import thunk from 'redux-thunk'
+import rocketsReducer from './reducer';
+import logger from 'redux-logger';
+
+
+const store = createStore(rocketsReducer,applyMiddleware(thunk,logger))
 
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
+<<<<<<< HEAD
       <App />
+=======
+    <App />
+>>>>>>> dev
     </Provider>
   </React.StrictMode>,
   document.getElementById('root')
