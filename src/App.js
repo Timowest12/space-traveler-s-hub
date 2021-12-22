@@ -1,34 +1,25 @@
-
 import './App.css';
-import MyProfile from './pages/MyProfile';
 import {
   BrowserRouter as Router,
   Route,
   Switch,
   NavLink,
 } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
+import MyProfile from './pages/MyProfile';
 import Missions from './components/missions/missions';
 import LOGO from './assets/planet.png';
 import Rockets from './pages/Rockets';
-import { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
-import { fetchRockets } from './actions';
-import { useState } from 'react';
-import { useLocation } from 'react-router';
-
-
-
+import fetchRockets from './actions';
 
 function App() {
-const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
-//const location = useLocation();
-
-
-useEffect(() => {
-  dispatch(fetchRockets())
-}, [])
-const [curActive,setCurActive] = useState('rockets')
+  useEffect(() => {
+    dispatch(fetchRockets());
+  }, []);
+  const [curActive, setCurActive] = useState('rockets');
   return (
     <Router>
       <header>
@@ -44,17 +35,17 @@ const [curActive,setCurActive] = useState('rockets')
 
           <ul className="navright">
             <li className="navlink">
-              
-              <NavLink onClick={() => setCurActive('missions')} style={curActive == 'missions' ?{ textDecoration:'underline'}:{ textDecoration:'none'}} to="/Missions">Missions</NavLink>
+
+              <NavLink onClick={() => setCurActive('missions')} style={curActive === 'missions' ? { textDecoration: 'underline' } : { textDecoration: 'none' }} to="/Missions">Missions</NavLink>
             </li>
-            
+
             <li className="navlink">
-              
-              <NavLink onClick={() => setCurActive('rockets')} style={curActive == 'rockets' ?{ textDecoration:'underline'}:{ textDecoration:'none'}} to="/Rockets">Rockets</NavLink>
+
+              <NavLink onClick={() => setCurActive('rockets')} style={curActive === 'rockets' ? { textDecoration: 'underline' } : { textDecoration: 'none' }} to="/Rockets">Rockets</NavLink>
             </li>
-            
+
             <li className="navlink">
-              <NavLink onClick={() => setCurActive('profile')} style={curActive == 'profile' ?{ textDecoration:'underline'}:{ textDecoration:'none'}} to="/My Profile">My Profile</NavLink>
+              <NavLink onClick={() => setCurActive('profile')} style={curActive === 'profile' ? { textDecoration: 'underline' } : { textDecoration: 'none' }} to="/My Profile">My Profile</NavLink>
             </li>
           </ul>
         </nav>

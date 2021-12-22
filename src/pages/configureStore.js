@@ -6,14 +6,12 @@ import rocketsReducer from '../reducer';
 
 const reducer = combineReducers({
   missions: missionsReducer,
-  rockets: rocketsReducer
+  rockets: rocketsReducer,
 });
 
 const store = createStore(
   reducer,
   applyMiddleware(thunk, logger),
 );
-
-
 
 export default store;
