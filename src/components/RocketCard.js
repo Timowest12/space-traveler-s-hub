@@ -1,49 +1,48 @@
-import React, { useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { reserveRocket } from '../actions'
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { v4 as uuidv4 } from 'uuid';
 
 const RocketCard = (data) => {
-    const [isReserved,setIsreserved] = useState(data.data.reserved)
-    const reserved = useSelector(state => state)
+  const { data: dataNew } = data;
+  const {
+    id, flickr_images: flickrImages, rocket_name: rocketName, reserved: reserv, description,
+  } = dataNew;
+  const [isReserved, setIsreserved] = useState(reserv);
 
-    const dispatch = useDispatch()
-    //alert(data.data.rocket_name)
-    const reserveRocket = () => {
-        dispatch({
-            type: 'RESERVE_ROCKET',
-            payload: data.data.id
-          })
-          setIsreserved(true)
-    }
-    const cancelReservation = () => {
-        dispatch({
-            type: 'CANCEL_RESERVATION',
-            payload: data.data.id
-          })
-          setIsreserved(false)
-    }
-    return (
-        <div className="rocketcard">
-            <div className="rocketimagewrapper">
-            <img className="rocketimage" src={data.data.flickr_images} alt="" />
-            </div>
-            <div className="rightcard">
-            <h5 className="rockettitle">{data.data.rocket_name}</h5>
-            <p className="rocketdescription">
-                {data.data.reserved ? <span className="reservedbadge">reserved</span>: <span></span>}
-                
-                {data.data.description}</p>
-            {data.data.reserved ? 
-            <button onClick={cancelReservation} className="cancelReservation">Cancel reservation</button> 
-            :
-            <button onClick={reserveRocket} className="reservebutton">Reserve Rocket</button>}
-           
-            
-            
-            
-            </div>
-        </div>
-    )
-}
+  const dispatch = useDispatch();
+  const reserveRocket = () => {
+    dispatch({
+      type: 'RESERVE_ROCKET',
+      payload: id,
+    });
+    setIsreserved(true);
+  };
+  const cancelReservation = () => {
+    dispatch({
+      type: 'CANCEL_RESERVATION',
+      payload: id,
+    });
+    setIsreserved(false);
+  };
+  return (
+    <div id={uuidv4()} className="rocketcard">
+      <div className="rocketimagewrapper">
+        <img className="rocketimage" key={isReserved} src={flickrImages} alt="" />
+      </div>
+      <div className="rightcard">
+        <h5 className="rockettitle">{rocketName}</h5>
+        <p className="rocketdescription">
+          {reserv ? <span className="reservedbadge">reserved</span> : <span />}
 
-export default RocketCard
+          {description}
+        </p>
+        {reserv
+          ? <button type="button" onClick={cancelReservation} className="cancelReservation">Cancel reservation</button>
+          : <button type="button" onClick={reserveRocket} className="reservebutton">Reserve Rocket</button>}
+
+      </div>
+    </div>
+  );
+};
+
+export default RocketCard;

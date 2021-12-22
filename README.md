@@ -1,6 +1,57 @@
-# Getting Started with Create React App
+# Space traveler's hub
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project uses the official spaceX API to pull in a list of active rockets and missions!
+![1128972](https://user-images.githubusercontent.com/13661892/147085665-93613de4-fb9b-4c4f-ac14-8ad8d50d6373.png)
+
+
+This project was created using React(JavaScript) and Redux,
+other technologies used: Axios, Thunk, CSS, Git
+
+### Usage
+
+Download it directly by ZIP, open the index file in a text editor, and you can change the content to match your own.
+CD into the root folder and run npm i(NodeJs and NPM required)
+run npm start to launch project on local server
+
+alternatively:
+
+open your terminal
+type `git clone` https://github.com/Timowest12/space-traveler-s-hub.git
+
+type `cd space travelers hub` to change directory to the folder of the project
+
+in your terminal type `npm install` to install all dependencies
+
+run `npm start` in your terminal
+
+![To the moon!](https://github.com/Timowest12/space-traveler-s-hub/blob/dev/src/assets/giphy.gif?raw=true)
+
+
+## Authors
+
+
+👤 **Timo Wester**
+
+- GitHub: [@githubhandle](https://github.com/Timowest12)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/timo-wester-6a0282a7/)
+
+![Timo's GitHub stats](https://github-readme-stats.vercel.app/api?username=Timowest12&count_private=true&theme=dark&show_icons=true)
+
+👤 **grace-kabaghe**
+
+- GitHub: [@githubhandle](https://github.com/gracekabaghe)
+- LinkedIn: [LinkedIn](https://linkedin.com/in/grace-kabaghe)
+
+![Grace's GitHub stats](https://github-readme-stats.vercel.app/api?username=gracekabaghe&count_private=true&theme=dark&show_icons=true)
+
+
+## Acknowledgments
+
+- Microverse
+
+## 📝 License
+
+This project is [MIT](./MIT) licensed.
 
 ## Available Scripts
 

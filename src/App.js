@@ -1,28 +1,25 @@
-
 import './App.css';
-import MyProfile from './pages/MyProfile';
 import {
   BrowserRouter as Router,
   Route,
   Switch,
   NavLink,
 } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
+import MyProfile from './pages/MyProfile';
 import Missions from './components/missions/missions';
 import LOGO from './assets/planet.png';
 import Rockets from './pages/Rockets';
-import { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
-import { fetchRockets } from './actions';
-
-
-
+import fetchRockets from './actions';
 
 function App() {
-const dispatch = useDispatch()
-useEffect(() => {
-  dispatch(fetchRockets())
-}, [])
+  const dispatch = useDispatch();
 
+  useEffect(() => {
+    dispatch(fetchRockets());
+  }, []);
+  const [curActive, setCurActive] = useState('rockets');
   return (
     <Router>
       <header>
@@ -38,16 +35,17 @@ useEffect(() => {
 
           <ul className="navright">
             <li className="navlink">
-              
-              <NavLink to="/Missions">Missions</NavLink>
+
+              <NavLink onClick={() => setCurActive('missions')} style={curActive === 'missions' ? { textDecoration: 'underline' } : { textDecoration: 'none' }} to="/Missions">Missions</NavLink>
             </li>
+
             <li className="navlink">
-              
-              <NavLink to="/Rockets">Rockets</NavLink>
+
+              <NavLink onClick={() => setCurActive('rockets')} style={curActive === 'rockets' ? { textDecoration: 'underline' } : { textDecoration: 'none' }} to="/Rockets">Rockets</NavLink>
             </li>
-            
+
             <li className="navlink">
-              <NavLink to="/My Profile">My Profile</NavLink>
+              <NavLink onClick={() => setCurActive('profile')} style={curActive === 'profile' ? { textDecoration: 'underline' } : { textDecoration: 'none' }} to="/My Profile">My Profile</NavLink>
             </li>
           </ul>
         </nav>
@@ -57,6 +55,7 @@ useEffect(() => {
         <Route path="/My Profile"><MyProfile /></Route>
         <Route path="/Missions"><Missions /></Route>
         <Route path="/Rockets"><Rockets /></Route>
+        <Route path="/"><Rockets /></Route>
       </Switch>
     </Router>
   );

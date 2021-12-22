@@ -1,12 +1,12 @@
-import { React, useEffect} from 'react';
+import { React, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { getMissionsData, allowJoinMission, allowLeaveMission } from '../../pages/missions';
 
 const Missions = () => {
-const dispatch = useDispatch();
+  const dispatch = useDispatch();
   const missions = useSelector((state) => state.missions.missions);
 
-const joinHandler = (id) => {
+  const joinHandler = (id) => {
     dispatch(allowJoinMission(id));
   };
 
@@ -16,6 +16,7 @@ const joinHandler = (id) => {
   useEffect(() => dispatch(getMissionsData()), [dispatch]);
 
   return (
+
     <table className="table-container">
       <thead>
         <tr>
@@ -26,11 +27,11 @@ const joinHandler = (id) => {
         </tr>
       </thead>
       <tbody>
-          {missions.map((mission) => {
+        {missions.map((mission) => {
           const {
-            id, 
-            name, 
-            description, 
+            id,
+            name,
+            description,
             reserved,
           } = mission;
 
@@ -55,12 +56,11 @@ const joinHandler = (id) => {
               </td>
 
             </tr>
-    )
-
- })}
- </tbody>
+          );
+        })}
+      </tbody>
     </table>
   );
 };
 
-  export default Missions;
+export default Missions;

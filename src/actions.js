@@ -1,15 +1,10 @@
-import Axios from "axios"
+import Axios from 'axios';
 
-export const fetchRockets = () => {
-    return async (dispatch,getState) => {
-        const response = await Axios.get('https://api.spacexdata.com/v3/rockets')
-        console.log(response.data)
-        dispatch({
-            type:'FETCH_ROCKETS',
-            payload:response.data
-        })
-    }
-}
-export const reserveRocket = (id) => {
-
-}
+const fetchRockets = () => async (dispatch) => {
+  const response = await Axios.get('https://api.spacexdata.com/v3/rockets');
+  dispatch({
+    type: 'FETCH_ROCKETS',
+    payload: response.data,
+  });
+};
+export default fetchRockets;

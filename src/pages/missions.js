@@ -1,4 +1,3 @@
-
 const fetchData = () => fetch('https://api.spacexdata.com/v3/missions');
 const ADD_MISSION = 'space/missions/ADD_MISSION';
 const MISSION_START = 'space/missions/MISSION_START';
@@ -50,7 +49,7 @@ export const getMissionsData = () => (dispatch) => {
     .catch((err) => dispatch(manageFailure(err.message)));
 };
 
-const missionsReducer = ( state = { missions: [] }, action) => {
+const missionsReducer = (state = { missions: [] }, action) => {
   switch (action.type) {
     case MISSION_START:
       return {
@@ -64,14 +63,14 @@ const missionsReducer = ( state = { missions: [] }, action) => {
         error: action.payload,
       };
 
-      case ADD_MISSION:
+    case ADD_MISSION:
       return {
         ...state,
         missions: selectData(action.payload),
         loading: false,
         error: null,
       };
-      case JOIN_MISSION:
+    case JOIN_MISSION:
       return {
         ...state,
         missions: state.missions.map((mission) => {
@@ -84,7 +83,7 @@ const missionsReducer = ( state = { missions: [] }, action) => {
           };
         }),
       };
-      case LEAVE_MISSION:
+    case LEAVE_MISSION:
       return {
         ...state,
         missions: state.missions.map((mission) => {

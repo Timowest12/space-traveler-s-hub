@@ -1,60 +1,44 @@
-import React from 'react'
-import { useSelector } from 'react-redux'
+import React from 'react';
+import { useSelector } from 'react-redux';
+import { v4 as uuidv4 } from 'uuid';
 
 const MyProfile = () => {
-  const rockets = useSelector(state => state)
-  console.log(rockets.length)
+  const rockets = useSelector((state) => state.rockets);
+  const missions = useSelector((state) => state.missions);
   return (
     <div className="profilePage">
-    <div className="myMissions">
+      <div className="myMissions">
         <h2>My Missions</h2>
-      <table>
-  <thead>
-    <tr>
-      <th>Telstar</th>
-    </tr>
-     <tr>
-      <th>SES</th>
-    </tr>
-     <tr>
-      <th>AsiaSat</th>
-    </tr>
-     <tr>
-      <th>ABS</th>
-    </tr>
-  </thead>
-  <tbody>
-  </tbody>
-  <tfoot>
-  </tfoot>
-</table>
-    </div>
-      
-<div className="myRockets">
-    <h2>My Rockets
+        <table>
+          <thead>
+            {missions.missions.map((item) => (item.reserved
+              ? <tr key={uuidv4()}><th>{item.name}</th></tr>
+              : null))}
+          </thead>
 
-</h2>
-<table>
-  <thead>
-    {rockets.map((item) => 
-      <tr>
-      {item.reserved ? 
-      <th>{item.rocket_name}</th>
-       : null}
-    </tr>
-    )}
-     
-  </thead>
-  <tbody>
-  </tbody>
-  <tfoot>
-  </tfoot>
-</table>
-</div>
-  
+        </table>
       </div>
-    
-  )
-}
 
-export default MyProfile
+      <div className="myRockets">
+        <h2>
+          My Rockets
+
+        </h2>
+        <table>
+          <thead>
+            {rockets.map((item) => (item.reserved
+              ? <tr key={uuidv4()}><th>{item.rocket_name}</th></tr>
+              : null))}
+
+          </thead>
+          <tbody />
+          <tfoot />
+        </table>
+      </div>
+
+    </div>
+
+  );
+};
+
+export default MyProfile;
