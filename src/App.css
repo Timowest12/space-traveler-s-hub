@@ -32,72 +32,85 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
 }
-nav{
+
+nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: 100px;
 }
-.logo{
+
+.logo {
   margin-top: 20px;
   height: 100px;
   margin-left: 20px;
   margin-right: 20px;
 }
-.navleft{
+
+.navleft {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   height: 100px;
 }
-.navright{
+
+.navright {
   display: flex;
   width: 60%;
   justify-content: space-evenly;
   list-style-type: none;
 }
-.rocketimage{
+
+.rocketimage {
   width: inherit;
 }
-.rocketimagewrapper{
+
+.rocketimagewrapper {
   width: 350px;
 }
-.rocketcard{
+
+.rocketcard {
   margin: 4px;
   display: flex;
-
 }
-.rightcard{
+
+.rightcard {
   padding: 5px 15px;
 }
-.rocketdescription{
+
+.rocketdescription {
   font-size: 20px;
 }
-.rockettitle{
+
+.rockettitle {
   margin: 0;
 }
-.reservebutton{
-  background-color: #3998FF;
-  color:white;
-  padding:15px;
+
+.reservebutton {
+  background-color: #3998ff;
+  color: white;
+  padding: 15px;
   font-size: 20px;
   border: none;
   border-radius: 5px;
 }
-.cancelReservation{
+
+.cancelReservation {
   background-color: white;
-  color:#8E949A;
-  padding:15px;
+  color: #8e949a;
+  padding: 15px;
   font-size: 20px;
-  border: 1px solid #8E949A;
+  border: 1px solid #8e949a;
   border-radius: 5px;
 }
-.reservedbadge{
-  background-color: #4FB6C7;
+
+.reservedbadge {
+  background-color: #4fb6c7;
   color: white;
   border-radius: 8px;
   margin: 0 5px;
