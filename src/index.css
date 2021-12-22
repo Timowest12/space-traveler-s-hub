@@ -23,5 +23,42 @@ th {
 }
 
 table, th, td {
-  border:1px solid black;
+  border:1px solid #111;
+}
+
+tr:nth-child(even) {
+  background: rgb(238, 233, 233);
+}
+
+.missionName {
+  padding-left: 10px;
+  position: relative;
+  top: 0;
+}
+
+.Joined {
+  background-color: gray;
+  border-radius: 10px;
+  padding: 0.5rem 1.4rem;
+  color: white;
+}
+
+.joinMission {
+  border: 1px solid  #bdc3c7 ;
+  color: #313030;
+}
+
+.leaveMission {
+  color: #d68058;
+  border: 1px solid #d68058;
+  background-color: #fff;
+}
+
+.activeMember {
+  background-color: #58ccd6;
+}
+
+.memberBtn {
+  padding: 10px;
+  margin-left: 10px;
 }
